@@ -1,0 +1,25 @@
+{% extends 'blog/main.html' %}
+
+{% load static %}
+
+{% block changeContent %}
+<div class="loginMessage">
+    <h1>Hola {{ usuario }}</h1>
+    <h2>{{ message }}</h2>
+</div>
+<div class="mainText">
+<h1>Este es el Index </h1>
+<p>
+    En este blog compartimos toda la información sobre bandas y proyectos de la escena alternativa
+    latinoamericana. Habran muchos proyectos que no conoces y hay muchos proyectos que no conocemos
+    para compartir lo que sabes UNETE A UnderLatam
+
+
+</p>
+<div class="backButton"><a href=" {% url 'dash' %}"><h4>Blog</h4></a></div>
+</div>
+
+{% endblock %}
+
+
+

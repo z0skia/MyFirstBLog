@@ -1,0 +1,25 @@
+{% extends 'blog/main.html' %}
+
+{% load static %}
+
+{% block changeContent %}
+<div class="mainText">
+<h1>Acerca de mí </h1>
+<p>
+    Mi nombre es Facundo Hernández y tengo 36 años. Me gusta la música, la literatura, el cine y 
+    la informática. Estudie locución el año pasado ya que tambien me gusta mucho la radio y en ese momento
+    decidí optar por la programación. 
+    Lo que me llevo a cambiar por este rumbo fue el hecho de darme 
+    cuenta de que los medios no son lo mismo que antes, el mercado tradicional (TV, radio, gráfica, etc.)
+    quedó limitado y cada vez más obsoleto. Por otra parte me di cuenta que gran parte de todo lo que see
+    se lo debo a internet y la informatica en general gracias a la democratización cultural que esta 
+    misma generó. Hasta el momento hice cursos gratiutos de distintas cosas relacionadas al tema y esta
+    es la primera escuela a la que me sumo para aprender lo cual me resultó una gran experiencia.
+</p>
+<div class="backButton"><a href=" {% url 'index' %}"><h4>Blog</h4></a></div>
+</div>
+
+{% endblock %}
+
+
+

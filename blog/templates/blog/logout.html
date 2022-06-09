@@ -1,0 +1,19 @@
+{% extends 'blog/main.html' %}
+
+{% load static %}
+
+{% block changeContent %}
+<div class="loginMessage">
+    <h1>Estas deslogead@</h1>
+    
+</div>
+<div class="mainText">
+<h1>Este es el Index </h1>
+<p>{% lorem 1 b random %}</p>
+<div class="backButton"><a href=" {% url 'dash' %}"><h4>Blog</h4></a></div>
+</div>
+
+{% endblock %}
+
+
+

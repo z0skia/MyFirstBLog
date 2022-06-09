@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Static-->
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="{% static 'blog/css/styles.css' %}"/>
+    <title>UnderLatam</title>
+</head>
+<body>
+    <!-- Header -->
+    <body>
+
+        <div class="header">
+          <a href="{% url 'index' %}" class="logo active">UnderLatam</a>
+          <div class="header-right">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'dash' %}">Blog</a> 
+            <a href="{% url 'about' %}">About</a>    
+            
+            {% if not request.user.is_authenticated %}
+                
+            <a href=" {% url 'login' %} ">Login</a>
+            <a href=" {% url 'register' %} ">Registrate</a> 
+
+            {% else %}
+
+            <a href=" {% url 'new_post' %}">Nuevo Post</a>
+            <a>Hola {{user}}</a>
+            <a href="{% url 'logout' %}">SALIR</a>
+
+            {% endif %}
+          </div>
+        </div>
+        
+        <div style="padding-left:20px">
+          <!-- <h1>Responsive Header</h1> -->
+          <!-- <p>Resize the browser window to see the effect.</p> -->
+          <!-- <p>Some content..</p> -->
+        </div>
+    <!-- Navbar -->
+    <!-- MainContent -->
+    {% block changeContent %}
+    
+    {% endblock changeContent %}
+
+    <!-- Footer -->
+</body>
+</html>
