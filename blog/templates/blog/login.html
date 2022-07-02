@@ -3,7 +3,7 @@
 {% block changeContent %}
 
 <div class="loginForm">
-    <h2> Hola {{ message }} </h2>
+    <h2> {{ message }} </h2>
     <h2>Login - Ingresa con tu mail y clave</h2>
     <form method="POST">{% csrf_token %}
         {{ form.as_p }}

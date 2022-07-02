@@ -1,0 +1,15 @@
+{% extends 'blog/main.html' %}
+
+{% block changeContent %}
+
+<div class="post">
+    {% for mensaje in mensajes %}
+    {{ mensaje }}
+</div>
+{% empty %}
+<div class="post">
+    <div class="title"><h2>No hay mensajes</h2></div>
+</div>
+{% endfor %}
+
+{% endblock %}

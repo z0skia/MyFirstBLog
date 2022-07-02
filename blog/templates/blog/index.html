@@ -3,12 +3,8 @@
 {% load static %}
 
 {% block changeContent %}
-<div class="loginMessage">
-    <h1>Hola {{ usuario }}</h1>
-    <h2>{{ message }}</h2>
-</div>
 <div class="mainText">
-<h1>Este es el Index </h1>
+<h1>Bienvenid@ </h1>
 <p>
     En este blog compartimos toda la información sobre bandas y proyectos de la escena alternativa
     latinoamericana. Habran muchos proyectos que no conoces y hay muchos proyectos que no conocemos
@@ -17,6 +13,21 @@
 
 </p>
 <div class="backButton"><a href=" {% url 'dash' %}"><h4>Blog</h4></a></div>
+</div>
+<div class="post">
+    <div class="title">
+        <h2>Ultimas publicaciones</h2>
+    </div>
+    
+    {% for post in posts %} 
+    
+    <div class="postElements">
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+    </div>
+    {% empty %}
+    <h2>No hay publicaciones</h2>
+    {% endfor %}
+    
 </div>
 
 {% endblock %}

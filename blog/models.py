@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
@@ -34,3 +35,7 @@ class MemberUser(models.Model):
         return self.user.username
 
 
+class Avatar(models.Model):
+    user=models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    avatar= models.ImageField(upload_to='avatar', null=True, blank=True, default='avatar/avatarDefault.png')

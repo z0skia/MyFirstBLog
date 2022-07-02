@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS Style -->
     <link rel="stylesheet" href="{% static 'blog/css/styles.css' %}"/>
+    <!-- CkEditor script-->
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+
     <title>UnderLatam</title>
 </head>
 <body>
@@ -27,9 +30,11 @@
             <a href=" {% url 'register' %} ">Registrate</a> 
 
             {% else %}
+            <a href=" {% url 'user_profiles' %}">Usuarios</a>
+            <!--<a href=" {% url 'add_avatar' %}">Cambiar Avatar</a>-->
 
             <a href=" {% url 'new_post' %}">Nuevo Post</a>
-            <a>Hola {{user}}</a>
+            <a href=" {% url 'user_detail' user.id %} ">Hola {{user}} [Mi Perfil]</a>
             <a href="{% url 'logout' %}">SALIR</a>
 
             {% endif %}

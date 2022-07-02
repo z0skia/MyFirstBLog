@@ -22,7 +22,12 @@ urlpatterns = [
     path('login', login_request, name='login'),
     path('register', register, name='register'),
     path('registerok',register, name='registerok'),
-    path('logout', LogoutView.as_view(template_name='blog/logout.html'), name='logout')
+    path('logout', LogoutView.as_view(template_name='blog/logout.html'), name='logout'),
+    path('edit_profile', edit_profile, name='edit_profile'),
+    path('user_detail/<pk>/', user_detail, name='user_detail'),
+    path('user_profiles', user_profiles, name='user_profiles'),
+    path('user_page/<pk>/', user_page.as_view(), name='user_page'),
+    path('add_avatar', add_avatar, name='add_avatar'),
 ]
 
 

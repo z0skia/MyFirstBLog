@@ -1,6 +1,6 @@
 #Blog
 from django import forms
-from .models import Post
+from .models import Post, Avatar
 from blog import models
 #USER SYSTEM
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
@@ -27,3 +27,20 @@ class UserRegistrationForm(UserCreationForm):
         fields=('username', 'email', 'password1', 'password2')
         help_texts={hlp:"" for hlp in fields}
     
+class UserEditForm(UserCreationForm):
+    email= forms.EmailField(required=True)
+    password1= forms.CharField(label="Modificar Contraseña", widget=forms.PasswordInput)
+    password2= forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput)
+
+    last_name= forms.CharField(label="Modificar Apellido")
+    first_name= forms.CharField(label="Modificar Nombre")
+
+
+    class Meta:
+        model=User
+        fields=('email', 'password1', 'password2', 'last_name', 'first_name')
+        help_texts={hlp:"" for hlp in fields}
+
+#Avatar
+class AvatarForm(forms.Form):
+    avatar= forms.ImageField(label="Avatar")

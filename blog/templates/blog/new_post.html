@@ -1,6 +1,7 @@
 {% extends 'blog/main.html' %}
 
 {% block changeContent %}
+
 <div class=postForm>
     <h2>Nuevo Post</h2>
     <form method="POST" enctype="multipart/form-data">{% csrf_token %}

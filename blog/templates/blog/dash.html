@@ -15,6 +15,10 @@
         <p> por {{ post.author }} </p>
     </div>    
 </div>
+{% empty %}
+<div class="post">
+    <div class="title"><h2>No hay publicaciones</h2></div>
+</div>
 {% endfor %}
     
 
